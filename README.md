@@ -56,6 +56,7 @@ All environment variables are stored within the `.env` file and loaded with dote
 Start the server by running:
 
     $ export FLASK_ENV=development
+    $ export FLASK_APP=web
     $ python3 -m flask run
 
 ## Unit Tests
@@ -75,5 +76,4 @@ Now run the integration tests using the following commands:
     $ python3 -m venv venv_integration
     $ source venv_integration/bin/actvate
     $ pip3 install -r requirements-integration.txt
-    $ export SQLALCHEMY_DATABASE_URI='sqlite:///web.db'
-    $ python -m unittest discover -v
+    $ pytest integration_test
