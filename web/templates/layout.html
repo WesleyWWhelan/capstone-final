@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+
+  <head>
+
+    <title>Samples by Wes</title>
+
+    <!-- Google fonts and icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+      body{
+        width:100%;
+        height:100%;
+        margin:0 auto;
+        background-image: url('../static/images/background2.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+      }
+      header{
+          background:transparent;
+          line-height: 50px ;
+          width: 100%;
+          font-family: 'Baloo Tamma 2', cursive;
+          margin-bottom:25px;
+      }
+      #page_title{
+        text-decoration: none;
+        color:black;
+        font-size: 50px;
+        margin-left:20px;
+        margin-right:940px;
+      }
+      .link{
+        text-decoration: none;
+        color:black;
+        font-size: 30px;
+        margin-right:50px;
+      }
+      .sub-header{
+        background:transparent;
+        line-height: 50px ;
+        width: 100%;
+        font-family: 'Baloo Tamma 2', cursive;
+        display:flex;
+      }
+      .sub-header-stuff{
+        margin: auto;
+        width: 60%;
+        display:flex;
+        align-items:center;
+        justify-content: center;
+        vertical-align: center;
+        border: 5px black;
+        border-style: solid none;
+        border-width:1px;
+      }
+      .sub-header-stuff a{
+        margin-left:15px;
+        margin-right:15px;
+        font-size:18px;
+        font-family: 'Montserrat', sans-serif;
+        font-weight:bolder;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div style='padding-top:30px;'>
+        <a id= 'page_title' href='{{ url_for("index") }}'> Logo (TBM)</a>
+        <!-- Need to have addition for when the user is already signed in (if logged in, link is logout) 
+        also add a profile link if they are logged in (will have to start the if before the div so that style can change for width-->
+        <a class='link'> Log in/Sign up</a>
+      </div>
+      <div class='sub-header'>
+        <div class='sub-header-stuff'>
+          <a>Guitar</a>
+          <a>Vocals</a>
+          <a>Chords</a>
+          <a>Misc.</a>
+        </div>
+      </div>
+    </header>
+
+
+    <div id="content">
+      {% block content %}{% endblock %}
+    </div>
+  </body>
+
+</html>
